@@ -40,8 +40,8 @@ let a, b, operator;
 
 const digitButtons = document.querySelectorAll('.digit');
 const displayInput = document.querySelector('.input');
-
 digitButtons.forEach((button) => button.addEventListener('click',addDigit));
+
 
 function clearInput() {
 displayInput.textContent = '';
@@ -49,3 +49,13 @@ displayInput.textContent = '';
 
 const clearButton = document.querySelector('#clear');
 clearButton.addEventListener('click', clearInput);
+
+function setOperator(e) {
+  operator = e.target.getAttribute('id');
+  a = parseFloat(displayInput.textContent);
+  displayInput.textContent += operator;
+  console.log(a + ' ' + operator);
+}
+
+const operatorButtons = document.querySelectorAll('.operator');
+operatorButtons.forEach((button) => button.addEventListener('click', setOperator));
