@@ -33,17 +33,17 @@ function operate(operator,a,b) {
 
 function addDigit(e) {
   let digit = e.target.getAttribute('id');
-  displayInput.textContent += digit;
+  inputDisplay.textContent += digit;
 }
 
 let a, b, operator;
 
 const digitButtons = document.querySelectorAll('.digit');
-const displayInput = document.querySelector('.input');
+const inputDisplay = document.querySelector('.input');
 digitButtons.forEach((button) => button.addEventListener('click',addDigit));
 
 function clearInput() {
-displayInput.textContent = '';
+inputDisplay.textContent = '';
 }
 
 const clearButton = document.querySelector('#clear');
@@ -51,16 +51,16 @@ clearButton.addEventListener('click', clearInput);
 
 function setOperator(e) {
   operator = e.target.getAttribute('id');
-  a = displayInput.textContent;
-  displayInput.textContent += operator;
+  a = inputDisplay.textContent;
+  inputDisplay.textContent += operator;
 }
 
 const operatorButtons = document.querySelectorAll('.operator');
 operatorButtons.forEach((button) => button.addEventListener('click', setOperator));
 
 function calculate() {
-  b = displayInput.textContent.slice(a.length + operator.length);
-  displayInput.textContent = operate(operator, parseFloat(a), parseFloat(b));
+  b = inputDisplay.textContent.slice(a.length + operator.length);
+  inputDisplay.textContent = operate(operator, parseFloat(a), parseFloat(b));
 }
 
 const equalButton = document.querySelector('.equals');
