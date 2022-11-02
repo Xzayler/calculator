@@ -1,25 +1,39 @@
-#calculator {
+.calculator {
   background-color: black;
   padding: 4px;
   border-radius: 9px;
   padding: 10px;
 }
 
-#display {
+.display {
   background-color: whitesmoke;
   border-radius: 6px;
-  min-height: 200px;
   margin-bottom: 16px;
+  text-align: right;
+  padding: 4px 16px;
+  min-height: 82px;
 }
 
-#buttons {
+.ans {
+  color: grey;
+  font-size: 24px;
+  margin: 0;
+}
+
+.input {
+  font-size: 48px;
+  margin-top: auto;
+  margin: 0;
+}
+
+.buttons {
   display: grid;
   grid-template: repeat(5, 1fr) / repeat(4,1fr);
   min-height: 400px;
   gap: 5px;
 }
 
-#buttons button {
+.buttons button {
   background-color: grey;
   border:0;
   border-radius: 6px;
@@ -28,10 +42,25 @@
 
   color: white;
   font-size: 32px;
-
 }
 
-#buttons .operator {
+.buttons button:hover {
+  border: 1px solid rgb(100,100,100);
+}
+
+.buttons button:active {
+  box-shadow: inset 0px 0px 16px 1px rgb(100,100,100);
+}
+
+.buttons .orange {
   background-color: orange;
   color: black;
+}
+
+.buttons .orange:hover {
+  border: 1px solid rgb(161, 88, 0);
+}
+
+.buttons .orange:active {
+  box-shadow: inset 0px 0px 16px 1px rgb(161, 88, 0);
 }
