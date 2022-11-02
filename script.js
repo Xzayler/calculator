@@ -42,7 +42,6 @@ const digitButtons = document.querySelectorAll('.digit');
 const displayInput = document.querySelector('.input');
 digitButtons.forEach((button) => button.addEventListener('click',addDigit));
 
-
 function clearInput() {
 displayInput.textContent = '';
 }
@@ -52,10 +51,17 @@ clearButton.addEventListener('click', clearInput);
 
 function setOperator(e) {
   operator = e.target.getAttribute('id');
-  a = parseFloat(displayInput.textContent);
+  a = displayInput.textContent;
   displayInput.textContent += operator;
-  console.log(a + ' ' + operator);
 }
 
 const operatorButtons = document.querySelectorAll('.operator');
 operatorButtons.forEach((button) => button.addEventListener('click', setOperator));
+
+function calculate() {
+  b = displayInput.textContent.slice(a.length + operator.length);
+  displayInput.textContent = operate(operator, parseFloat(a), parseFloat(b));
+}
+
+const equalButton = document.querySelector('.equals');
+equalButton.addEventListener('click', calculate)
