@@ -30,3 +30,22 @@ function operate(operator,a,b) {
       return 'error'
   }
 }
+
+function addDigit(e) {
+  let digit = e.target.getAttribute('id');
+  displayInput.textContent += digit;
+}
+
+let a, b, operator;
+
+const digitButtons = document.querySelectorAll('.digit');
+const displayInput = document.querySelector('.input');
+
+digitButtons.forEach((button) => button.addEventListener('click',addDigit));
+
+function clearInput() {
+displayInput.textContent = '';
+}
+
+const clearButton = document.querySelector('#clear');
+clearButton.addEventListener('click', clearInput);
